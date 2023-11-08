@@ -17,7 +17,7 @@ In Powershell running as your user account under Windows
 
 ```powershell
 $sshKeyphrase = ConvertTo-SecureString -AsPlainText -Force -String "my-secret-key"
-New-StoredCredential -Target "ssh-passphrase-id_ed25519" -SecurePassword $sshKeyphrase
+New-StoredCredential -Target "ssh-passphrase-id_ed25519" -SecurePassword $sshKeyphrase -Persist LocalMachine
 ```
 
 ### Create Windows-side script
