@@ -40,7 +40,7 @@ $sshPassphraseTarget = "ssh-passphrase-id_ed25519"
 $credentials = Get-StoredCredential -Target $sshPassphraseTarget
 $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($credentials.Password)
 $passphrase = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
-C:\Windows\System32\wsl.exe -u $wslUsername -d $wslDistribution /home/$wslUsername/.config/wsl-keychain/keychain.sh $passphrase
+C:\Windows\System32\wsl.exe -u $wslUsername -d $wslDistribution /home/$wslUsername/.config/wsl-keychain/keychain.sh `'$passphrase`'
 ```
 
 ### Set up Task Manager to run the script
