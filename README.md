@@ -88,15 +88,16 @@ Copy in the following and adjust to suit your needs
 
 ```bash
 #!/bin/bash
+set +H
 SSH_ASKPASS_SCRIPT=/tmp/ssh-askpass-script
 cat > ${SSH_ASKPASS_SCRIPT} <<EOL
 #!/bin/bash
+set +H
 echo "$1"
 EOL
 chmod u+x ${SSH_ASKPASS_SCRIPT}
 export DISPLAY="0"
 export SSH_ASKPASS=${SSH_ASKPASS_SCRIPT}
 /usr/bin/keychain --clear id_ed25519
-rm ${SSH_ASKPASS_SCRIPT}
-```
+rm ${SSH_ASKPASS_SCRIPT}```
 
